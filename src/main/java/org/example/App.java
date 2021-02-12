@@ -2,11 +2,14 @@ package org.example;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * JavaFX App
@@ -18,6 +21,11 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("primary"), 640, 480);
+
+        Label helloWorldLabel = new Label("Hello world!");
+
+        stage.setTitle("Hello world application");
+        helloWorldLabel.setAlignment(Pos.CENTER);
         stage.setScene(scene);
         stage.show();
     }
